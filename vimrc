@@ -33,6 +33,9 @@ let mapleader = ","
 nmap <leader>w :w<cr>
 nmap <leader>q :q<cr>
 
+" Turn off highlighting
+nmap <F3> :noh<CR>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " UI
