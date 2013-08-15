@@ -153,3 +153,8 @@ let ruby_fold=1
 let vimsyn_folding='af'
 let xml_syntax_folding=1
 let sh_fold_enabled=1
+
+" Easy top level folding
+map <leader>f :%foldc<cr>
+map <leader>o zR<cr>
+map <leader>r :setlocal foldlevel=1<cr>
