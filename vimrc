@@ -40,7 +40,7 @@ nmap <F3> :noh<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " UI
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set 7 line sto the cursor
+" Set 7 lines to the cursor
 set so=7
 
 " Configure backspace so it acts as it should act
@@ -139,9 +139,8 @@ set clipboard=unnamedplus
 " Fold settings (equivalant to collapsing)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 set foldmethod=syntax
-set foldlevelstart=1
-"set foldnestmax=4
-"set foldlevel=5
+set foldlevelstart=99
+set foldnestmax=5
 
 " Fold colors (to make it appear like dashes and 
 " not have a horrible background color).
