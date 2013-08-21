@@ -174,6 +174,7 @@ function tup() {
     xdotool windowfocus $WID
     xdotool key ctrl+shift+t
     xdotool key alt+1
+    xdotool key super+Up
     wmctrl -i -a $WID
 }
 
@@ -188,5 +189,5 @@ function setenv() {
     elif [ "$1" = p ]; then
         export NODE_ENV=production;
     fi
-    echo Environment set to $NODE_ENV
+    echo Environment set to $NODE_ENV;
 }
