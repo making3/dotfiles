@@ -12,6 +12,7 @@ Plugins Used:<br />
 [Pathogen](https://github.com/tpope/vim-pathogen)<br />
 [SnipMate](https://github.com/garbas/vim-snipmate)<br />
 [NERDCommenter](https://github.com/scrooloose/nerdcommenter)<br />
+[Tabular](https://github.com/godlygeek/tabular)<br />
 
 Installation
 ============

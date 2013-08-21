@@ -92,7 +92,6 @@ alias ls='ls -lF --color=auto'
 alias grep='grep --color=auto -n'
 alias diskspace='du -S | sort -n -r |more'
 
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -139,3 +138,18 @@ NC='\e[0m'              # No Color
 
 #echo -ne "${LIGHTGREEN}" "Hello, $USER. today is, "; date
 #echo -ne "${LIGHTPURPLE}Sysinfo:";uptime ;echo ""
+
+
+# Custom functions
+
+###
+# Resets the database based on the seed and optionally runs the compound server
+###
+function crs() {
+    compound db migrate;
+    compound seed;
+
+    if [ "$1" = s ]; then
+        compound s;
+    fi
+}
