@@ -139,8 +139,9 @@ NC='\e[0m'              # No Color
 #echo -ne "${LIGHTGREEN}" "Hello, $USER. today is, "; date
 #echo -ne "${LIGHTPURPLE}Sysinfo:";uptime ;echo ""
 
-
+##################################################################################
 # Custom functions
+##################################################################################
 
 ###
 # Resets the database based on the seed and optionally runs the compound server
@@ -151,5 +152,40 @@ function crs() {
 
     if [ "$1" = s ]; then
         compound s;
+    fi
+}
+
+###
+# Sets up genesis development environment (terminal with tmux and a new tab)
+###
+function genesis() {
+    cd ~/dev/genesis-myghr/;
+    tup;
+    tmux;
+}
+
+###
+# Opens up a new tab
+###
+function tup() {
+#!/bin/sh
+
+    WID=$(xprop -root | grep "_NET_ACTIVE_WINDOW(WINDOW)"| awk '{print $5}')
+    xdotool windowfocus $WID
+    xdotool key ctrl+shift+t
+    xdotool key alt+1
+    wmctrl -i -a $WID
+}
+
+###
+# Exports node environments
+###
+function setenv() {
+    if [ "$1" = d ]; then
+        export NODE_ENV=development;
+    elif [ "$1" = t ]; then
+        export NODE_ENV=test;
+    elif [ "$1" = p ]; then
+        export NODE_ENV=production;
     fi
 }
