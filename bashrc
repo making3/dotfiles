@@ -91,6 +91,9 @@ alias l='ls -CF'
 alias ls='ls -lF --color=auto'
 alias grep='grep --color=auto -n'
 alias diskspace='du -S | sort -n -r |more'
+alias c='compound'
+alias cs='compound s'
+alias cr='compound r'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
