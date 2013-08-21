@@ -188,4 +188,5 @@ function setenv() {
     elif [ "$1" = p ]; then
         export NODE_ENV=production;
     fi
+    echo Environment set to $NODE_ENV
 }
