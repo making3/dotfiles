@@ -133,6 +133,16 @@ au BufNewFile,BufRead *.mustache set filetype=html
 " Turns on yanking/cutting to the clipboard.
 set clipboard=unnamedplus 
 
+" Disable arrow keys.
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status line
 """"""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -85,15 +85,6 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -a'
-alias l='ls -CF'
-alias ls='ls -lF --color=auto'
-alias grep='grep --color=auto -n'
-alias diskspace='du -S | sort -n -r |more'
-alias c='compound'
-alias cs='compound s'
-alias cr='compound r'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -141,6 +132,23 @@ NC='\e[0m'              # No Color
 
 #echo -ne "${LIGHTGREEN}" "Hello, $USER. today is, "; date
 #echo -ne "${LIGHTPURPLE}Sysinfo:";uptime ;echo ""
+
+##################################################################################
+# Custom aliases
+##################################################################################
+# General
+alias ll='ls -alF'
+alias la='ls -a'
+alias l='ls -CF'
+alias ls='ls -lF --color=auto'
+alias grep='grep --color=auto -n'
+alias diskspace='du -S | sort -n -r |more'
+
+# Compoundjs/nodejs specific aliases
+alias c='compound'
+alias cs='compound s'
+alias cr='compound r'
+
 
 ##################################################################################
 # Custom functions
@@ -193,4 +201,19 @@ function setenv() {
         export NODE_ENV=production;
     fi
     echo Environment set to $NODE_ENV;
+}
+
+###
+# Mocha test with optional grep argument
+###
+function m() {
+    if [[ -n "$1" ]]; then
+        if [[ -n "$2" ]]; then
+            mocha test/init.js $1 -g "$2";
+        else
+            mocha test/init.js $1;
+        fi
+    else
+        echo Please specify the test you want to run, and optionally a grep argument.;
+    fi
 }
