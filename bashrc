@@ -148,6 +148,7 @@ alias diskspace='du -S | sort -n -r |more'
 alias c='compound'
 alias cs='compound s'
 alias cr='compound r'
+alias cc='compound c'
 
 
 ##################################################################################
