@@ -43,19 +43,21 @@ Solarized Theme Install
 =======================
 Solarized theme is enabled in the .vimrc configuration file and the tmux configuration, so all that needs to be done is the terminal needs to be configured to use the solarized theme as well:
 
-    git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle
-    git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git ~/dotfiles
+    cd ~/.vim/bundle
+    git clone git://github.com/altercation/vim-colors-solarized.git
+    cd ~/dotfiles
+    git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git
     // Create a new terminal profile. 
         // From the menu bar (if not shown, right click in terminal > show menu bar):
         // Edit > Profiles
         // New
         // Solarized, Based on: Default (or whatever profile is being used)
         // Set "Profile used when launching a new termianl to Solarized
-    ~/dotfiles/gnome-terminal-colors-solarized/install.sh
+    ./gnome-terminal-colors-solarized/install.sh
     // Choose light or dark, and then overwrite the Solarized profile
 
 
 TODO
 ====
-Add GIT configuration
-Add javascript and other custom snippets
+    Add GIT configuration
+    Add javascript and other custom snippets
