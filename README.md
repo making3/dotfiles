@@ -62,7 +62,7 @@ Snippets Installation
 Default snippet files for each language can be found in the above repository if none are found in dotfiles/snippets. To install snippets, see the below:
 
     cd ~/dotfiles
-    cp -r /snippets/ ~/.vim/snippets/
+    cp -r ./snippets/ ~/.vim/
 
 
 TODO
