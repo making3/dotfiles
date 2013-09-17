@@ -56,8 +56,17 @@ Solarized theme is enabled in the .vimrc configuration file and the tmux configu
     ./gnome-terminal-colors-solarized/install.sh
     // Choose light or dark, and then overwrite the Solarized profile
 
+Snippets Installation
+=====================
+[Snippet Respository](https://github.com/honza/vim-snippets)<br />
+Default snippet files for each language can be found in the above repository if none are found in dotfiles/snippets. To install snippets, see the below:
+
+    cd ~/dotfiles
+    cp -r /snippets/ ~/.vim/snippets/
+
 
 TODO
 ====
+    Add javascript schema file
     Add GIT configuration
-    Add javascript and other custom snippets
+    Add an "Update Local Computer" script to copy all settings (such as snippets) after git is pulled

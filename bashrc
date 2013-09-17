@@ -194,10 +194,10 @@ function tup() {
 # Exports node environments
 ###
 function setenv() {
-    if [ "$1" = d ]; then
+    if [ "$1" = dev ]; then
         export NODE_ENV=development;
-    elif [ "$1" = t ]; then
-        export NODE_ENV=test;
+    elif [ "$1" = demo ]; then
+        export NODE_ENV=demo;
     elif [ "$1" = p ]; then
         export NODE_ENV=production;
     fi
