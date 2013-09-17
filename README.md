@@ -1,12 +1,9 @@
 dotfiles
 ========
-This repo Includes my custom vimrc and tmux config files. They should be cloned to ~/dotfiles/.
+This repo Includes my custom vimrc and tmux config files. They should be cloned to ~/.dotfiles/.
 
 Tutorial reference:<br />
 [Using git and github to manager your dotfiles](http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/)
-
-Javascript syntax support (enhanced):<br />
-[Javascript syntax enhanced](http://www.vim.org/scripts/script.php?script_id=1491)
 
 Plugins Used:<br />
 [Pathogen](https://github.com/tpope/vim-pathogen)<br />
@@ -15,10 +12,19 @@ Plugins Used:<br />
 [Tabular](https://github.com/godlygeek/tabular)<br />
 [Solarized](https://github.com/altercation/vim-colors-solarized)
 
+Other Details:
+[Vim Snippet Files](https://github.com/honza/vim-snippets)
+Default snippet files for vim. Add to dotfiles/snippets.<br />
+[Javascript syntax support enhanced](http://www.vim.org/scripts/script.php?script_id=1491)
+This is included in the makesymlinks script.<br />
+
+
 Installation
 ============
-    git clone https://github.com/making3/dotfiles.git ~/dotfiles
-    cd ~/dotfiles
+    Installing into ~/.dotfiles is optional. If this is changed, then the makesymlinks.sh file's variables must be changed (at the top).
+    
+    git clone https://github.com/making3/dotfiles.git ~/.dotfiles
+    cd ~/.dotfiles
     chmod +x makesymlinks.sh
     ./makesymlinks.sh
     
@@ -45,7 +51,7 @@ Solarized theme is enabled in the .vimrc configuration file and the tmux configu
 
     cd ~/.vim/bundle
     git clone git://github.com/altercation/vim-colors-solarized.git
-    cd ~/dotfiles
+    cd ~/.dotfiles
     git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git
     // Create a new terminal profile. 
         // From the menu bar (if not shown, right click in terminal > show menu bar):
@@ -56,17 +62,7 @@ Solarized theme is enabled in the .vimrc configuration file and the tmux configu
     ./gnome-terminal-colors-solarized/install.sh
     // Choose light or dark, and then overwrite the Solarized profile
 
-Snippets Installation
-=====================
-[Snippet Respository](https://github.com/honza/vim-snippets)<br />
-Default snippet files for each language can be found in the above repository if none are found in dotfiles/snippets. To install snippets, see the below:
-
-    cd ~/dotfiles
-    cp -r ./snippets/ ~/.vim/
-
-
 TODO
 ====
-    Add javascript schema file
     Add GIT configuration
     Add an "Update Local Computer" script to copy all settings (such as snippets) after git is pulled

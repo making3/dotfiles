@@ -9,7 +9,7 @@
 dir=~/.dotfiles                     # dotfiles directory
 olddir=~/.dotfiles_old              # old dotfiles backup directory
 files="bashrc vimrc tmux.conf"      # list of files/folders to symlink in homedir
-snippets=~/.vim/snippets            # Vim snippets folder
+vim=~/.vim/                         # Vim folder
 
 ##########
 
@@ -31,10 +31,21 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+# Create $vim/snippets & $vim/syntax
+echo "Creating director $vim/snippets and $vim/syntax if they do not already exist."
+mkdir -p $vim/snippets
+mkdir -p $vim/syntax
+
 # Make symlinks for snippets to point to dotfiles/snippets
-echo "Moving any existing vim snippets from $snippets to $olddir/snippets"
-mv $snippets $olddir/snippets
-echo "Creating symlink to $dir/snippets in $snippets"
-ln -s $dir/snippets $snippets
+echo "Moving any existing vim snippets from $vim/snippets to $olddir/snippets"
+mv $vim/snippets $olddir/snippets
+echo "Creating symlink to $dir/snippets in $vim/snippets"
+ln -s $dir/snippets $vim/snippets
+
+# Make symlinks for syntax to poitn to dotfiles/syntax
+echo "Moving any existing vim snytax files from $vim/syntax to $olddir/syntax"
+mv $vim/syntax $olddir/snippets
+echo "Creating symlink to $dir/syntax in $vim/snippets"
+ln -s $dir/syntax $vim/syntax
 
 echo "Sym link script complete."
