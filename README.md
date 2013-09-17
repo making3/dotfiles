@@ -1,6 +1,6 @@
-dotfiles
-========
-This repo Includes my custom vimrc and tmux config files. They should be cloned to ~/.dotfiles/.
+About
+=====
+This repo includes my custom vimrc, tmux, and bashrc config files, along with any custom snippets, syntax, or plugins. Follow the instructions below.
 
 Tutorial reference:<br />
 [Using git and github to manager your dotfiles](http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/)
@@ -12,7 +12,7 @@ Plugins Used:<br />
 [Tabular](https://github.com/godlygeek/tabular)<br />
 [Solarized](https://github.com/altercation/vim-colors-solarized)
 
-Other Details:
+Other Details:<br />
 [Vim Snippet Files](https://github.com/honza/vim-snippets)
 Default snippet files for vim. Add to dotfiles/snippets.<br />
 [Javascript syntax support enhanced](http://www.vim.org/scripts/script.php?script_id=1491)
@@ -21,7 +21,7 @@ This is included in the makesymlinks script.<br />
 
 Installation
 ============
-    Installing into ~/.dotfiles is optional. If this is changed, then the makesymlinks.sh file's variables must be changed (at the top).
+Installing into ~/.dotfiles is optional. If this is changed, then the variables in makesymlinks.sh must be changed (only at the top).
     
     git clone https://github.com/making3/dotfiles.git ~/.dotfiles
     cd ~/.dotfiles
@@ -65,4 +65,4 @@ Solarized theme is enabled in the .vimrc configuration file and the tmux configu
 TODO
 ====
     Add GIT configuration
-    Add an "Update Local Computer" script to copy all settings (such as snippets) after git is pulled
+    Possible add a script to auto install all plugins
