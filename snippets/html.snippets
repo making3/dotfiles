@@ -830,3 +830,27 @@ snippet video
 	<video src="${1} height="${2}" width="${3}" preload="${5:none}" autoplay="${6:autoplay}>${7}</video>
 snippet wbr
 	<wbr />
+
+# Breadcrumb
+snippet bc
+	<%- breadcrumb({ url: ${1}, name: '${2}' }) %>
+sn
+
+# Compoundjs default breadcrumb and title
+snippet cdef
+	<ul class="breadcrumb">
+		<%- breadcrumb({ url: '/', name: 'Home' }) %>
+		${0}
+	</ul>
+	<div class="page-header">
+		<h1><%- title %></h1>
+	</div>
+
+#Control label
+snippet cinput
+	<div class="control-group">
+		<%- form.label("${1}", false, { class: 'control-label' }) %>
+		<div class="controls">
+			<%- form.input("${2}") %>
+		</div>
+	</div>
