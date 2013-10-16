@@ -1,0 +1,9 @@
+[user]
+    email = mattking73@gmail.com
+    name = Matthew King
+[color]
+    ui = true
+[merge]
+    ff = false
+[core]
+    editor = vim
