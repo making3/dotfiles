@@ -202,8 +202,10 @@ function setenv() {
         export NODE_ENV=development;
     elif [ "$1" = demo ]; then
         export NODE_ENV=demo;
-    elif [ "$1" = p ]; then
+    elif [ "$1" = prod ]; then
         export NODE_ENV=production;
+    elif [ "$1" = load ]; then
+        export NODE_ENV=load;
     fi
     echo Environment set to $NODE_ENV;
 }

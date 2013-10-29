@@ -6,10 +6,10 @@
 
 ########## Variables
 
-dir=~/.dotfiles                     # dotfiles directory
-olddir=~/.dotfiles_old              # old dotfiles backup directory
-files="bashrc vimrc tmux.conf"      # list of files/folders to symlink in homedir
-vim=~/.vim/                         # Vim folder
+dir=~/.dotfiles                             # dotfiles directory
+olddir=~/.dotfiles_old                      # old dotfiles backup directory
+files="bashrc vimrc tmux.conf gitconfig"    # list of files/folders to symlink in homedir
+vim=~/.vim/                                 # Vim folder
 
 ##########
 
@@ -38,13 +38,15 @@ mkdir -p $vim/syntax
 
 # Make symlinks for snippets to point to dotfiles/snippets
 echo "Moving any existing vim snippets from $vim/snippets to $olddir/snippets"
+rm -rf $olddir/snippets
 mv $vim/snippets $olddir/snippets
 echo "Creating symlink to $dir/snippets in $vim/snippets"
 ln -s $dir/snippets $vim/snippets
 
 # Make symlinks for syntax to poitn to dotfiles/syntax
 echo "Moving any existing vim snytax files from $vim/syntax to $olddir/syntax"
-mv $vim/syntax $olddir/snippets
+rm -rf $olddir/syntax
+mv $vim/syntax $olddir/syntax
 echo "Creating symlink to $dir/syntax in $vim/snippets"
 ln -s $dir/syntax $vim/syntax
 
