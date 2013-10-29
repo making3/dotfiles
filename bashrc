@@ -150,6 +150,10 @@ alias cs='compound s'
 alias cr='compound r'
 alias cc='compound c'
 
+# Ruby/Rails specific
+alias rt='bundle exec rspec $1' # Run rails tests
+alias rs='rails s' # Rails server
+
 
 ##################################################################################
 # Custom functions
@@ -218,3 +222,8 @@ function m() {
         echo Please specify the test you want to run, and optionally a grep argument.;
     fi
 }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

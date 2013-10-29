@@ -129,7 +129,7 @@ au BufNewFile,BufRead *.template set filetype=html
 au BufNewFile,BufRead *.mustache set filetype=html
 
 " Turns on yanking/cutting to the clipboard.
-set clipboard=unnamedplus 
+"set clipboard+=unnamedplus 
 
 " Disable arrow keys.
 map <up> <nop>
