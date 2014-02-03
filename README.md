@@ -60,6 +60,11 @@ Solarized theme is enabled in the .vimrc configuration file and the tmux configu
     ./gnome-terminal-colors-solarized/install.sh
     // Choose light or dark, and then overwrite the Solarized profile
 
+Windows Link Examples
+=====================
+    MKLINK "C:\Program Files (x86)\Vim\_vimrc" C:\dev\dotfiles\vimrc
+    MKLINK "C:\Program Files (x86)\Vim\_gvimrc" C:\dev\dotfiles\gvimrc
+
 TODO
 ====
     Add GIT configuration
