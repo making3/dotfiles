@@ -163,8 +163,8 @@ map <leader>r :setlocal foldlevel=1<cr>
 set swapfile
   
 if has("win32") || has("win16")
-  set dir=C:\util\_vim_swap
-  set backupdir=C:\util\_vim_backups
+  set dir=$HOME\.vim\.swap\
+  set backupdir=$HOME\.vim\.backups\
 else
   set dir=~/.vim/.swap
   set backupdir=~/.vim/.backups

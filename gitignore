@@ -1,0 +1,45 @@
+# Compiled sources #
+####################
+*.exe
+*.dll
+
+# Folders #
+###########
+bin/
+obj/
+packages/
+
+# User Files #
+##############
+*.user
+*.suo
+
+# Global Linux #
+################
+dump.rdb
+lib-cov
+*.log
+*.csv
+*.out
+*.pid
+pids
+logs
+results
+node_modules
+npm-debug.log
+.idea
+.DS_Store
+log/*.log
+.c9revisions
+coverage.html
+.settings
+doc
+public/javascripts/application.js
+public/javascripts/login.js
+public/javascripts/bower_components
+public/stylesheets/application.css
+public/stylesheets/login.css
+public/javascripts/password-reset.js
+public/stylesheets/pdf.css
+public/stylesheets/logbook-legend-pdf.css
+public/stylesheets/logbook-legend-view.css
