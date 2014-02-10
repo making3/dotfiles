@@ -22,11 +22,19 @@ This is included in the makesymlinks script.<br />
 Installation
 ============
 Installing into ~/.dotfiles is optional. If this is changed, then the variables in makesymlinks.sh must be changed (only at the top).
+
+Windows
+
+    git clone https://github.com/making3/dotfiles.git %HOME%/.dotfiles
+    cd %HOME%/.dotfiles
+    ./win_makesymlinks.sh
+
+Linux
     
     git clone https://github.com/making3/dotfiles.git ~/.dotfiles
     cd ~/.dotfiles
     chmod +x makesymlinks.sh
-    ./makesymlinks.sh
+    ./linux_makesymlinks.sh
     
 Pathogen Installation
 =====================
@@ -60,12 +68,6 @@ Solarized theme is enabled in the .vimrc configuration file and the tmux configu
     ./gnome-terminal-colors-solarized/install.sh
     // Choose light or dark, and then overwrite the Solarized profile
 
-Windows Link Examples
-=====================
-    MKLINK "C:\Program Files (x86)\Vim\_vimrc" C:\dev\dotfiles\vimrc
-    MKLINK "C:\Program Files (x86)\Vim\_gvimrc" C:\dev\dotfiles\gvimrc
-
 TODO
 ====
-    Add GIT configuration
     Possible add a script to auto install all plugins

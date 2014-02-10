@@ -33,6 +33,3 @@ source $VIMRUNTIME/mswin.vim
 " Forgot what these do...
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
-
-" Sets to default location
-set viminfo+=nC:\util\viminfo
