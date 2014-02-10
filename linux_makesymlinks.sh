@@ -43,11 +43,16 @@ mv $vim/snippets $olddir/snippets
 echo "Creating symlink to $dir/snippets in $vim/snippets"
 ln -s $dir/snippets $vim/snippets
 
-# Make symlinks for syntax to poitn to dotfiles/syntax
+# Make symlinks for syntax to point to dotfiles/syntax
 echo "Moving any existing vim snytax files from $vim/syntax to $olddir/syntax"
 rm -rf $olddir/syntax
 mv $vim/syntax $olddir/syntax
 echo "Creating symlink to $dir/syntax in $vim/snippets"
 ln -s $dir/syntax $vim/syntax
+
+# Make backup/swap file directories
+echo "Making swap & backup directories"
+mkdir -p ~/.vim/.swap
+mkdir -p ~/.vim/.backups
 
 echo "Sym link script complete."
