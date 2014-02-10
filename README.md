@@ -27,7 +27,7 @@ Windows
 
     git clone https://github.com/making3/dotfiles.git %HOME%/.dotfiles
     cd %HOME%/.dotfiles
-    ./win_makesymlinks.sh
+    win_makesymlinks.bat
 
 Linux
     
