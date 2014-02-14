@@ -122,14 +122,14 @@ au BufNewFile,BufRead *.template set filetype=html
 au BufNewFile,BufRead *.mustache set filetype=html
 
 " Disable arrow keys.
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
+" imap <up> <nop>
+" imap <down> <nop>
+" imap <left> <nop>
+" imap <right> <nop>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fold settings (equivalant to collapsing)
