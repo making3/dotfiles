@@ -34,7 +34,7 @@ Linux
     
     git clone https://github.com/making3/dotfiles.git ~/.dotfiles
     cd ~/.dotfiles
-    chmod +x makesymlinks.sh
+    chmod +x linux_makesymlinks.sh
     ./linux_makesymlinks.sh
     
 Pathogen Installation
