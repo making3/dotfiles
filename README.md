@@ -28,6 +28,7 @@ Windows
     git clone https://github.com/making3/dotfiles.git %HOME%/.dotfiles
     cd %HOME%/.dotfiles
     win_makesymlinks.bat
+    set_cmd_autorun.cmd -> RUN ONLY ONCE
 
 Linux
     
