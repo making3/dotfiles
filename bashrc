@@ -150,6 +150,11 @@ alias cs='compound s'
 alias cr='compound r'
 alias cc='compound c'
 
+# Ruby/Rails specific
+alias rt='bundle exec rspec $1' # Run rails tests
+alias rs='rails s' # Rails server
+alias beg='bundle exec guard'
+
 
 ##################################################################################
 # Custom functions

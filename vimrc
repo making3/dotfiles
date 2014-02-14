@@ -13,8 +13,8 @@
 "       Colors and fonts
 "       Text, tabs and indents
 "       Moving around, tabs, windows and buffers
-"       Status line (unused)
 "       Fold settings
+"		OS Specific
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -37,11 +37,12 @@ nmap <leader>q :q<cr>
 nmap <F3> :noh<CR>
 
 " Tabular mappings
-nmap <leader>a= :Tab /=<cr>
-vmap <leader>a= :Tab /=<cr>
-nmap <leader>a: :Tab /:\zs<cr>
-vmap <leader>a: :Tab /:\zs<cr>
-
+if (exists(":Tabularize"))
+  nmap <leader>a= :Tab /=<cr>
+  vmap <leader>a= :Tab /=<cr>
+  nmap <leader>a: :Tab /:\zs<cr>
+  vmap <leader>a: :Tab /:\zs<cr>
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " UI
@@ -80,14 +81,6 @@ set tm=500
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=utf8
 set ffs=unix,dos,mac
-
-"se t_Co=16
-"set background=dark
-"let g:solarized_termcolors=256
-"let g:solorized_visibility = "high"
-"let g:solarized_contrast = "high"
-"let g:solarized_termtrans = 1
-"colorscheme solarized
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -128,28 +121,15 @@ au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.template set filetype=html
 au BufNewFile,BufRead *.mustache set filetype=html
 
-" Turns on yanking/cutting to the clipboard.
-set clipboard=unnamedplus 
-
 " Disable arrow keys.
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Status line
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Always show the status line
-"set laststatus=2
-
-" Format the status line
-"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
+" imap <up> <nop>
+" imap <down> <nop>
+" imap <left> <nop>
+" imap <right> <nop>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fold settings (equivalant to collapsing)
@@ -174,3 +154,18 @@ let sh_fold_enabled=1
 map <leader>f :%foldc<cr>
 map <leader>o zR<cr>
 map <leader>r :setlocal foldlevel=1<cr>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" OS Specific
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set swapfile
+  
+if has("win32") || has("win16")
+  set dir=$HOME\.vim\.swap\
+  set backupdir=$HOME\.vim\.backups\
+else
+  set dir=~/.vim/.swap
+  set backupdir=~/.vim/.backups
+endif
