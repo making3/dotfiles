@@ -220,3 +220,5 @@ function m() {
         echo Please specify the test you want to run, and optionally a grep argument.;
     fi
 }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
