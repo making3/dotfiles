@@ -228,15 +228,17 @@ function m() {
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+if [[ "$OSTYPE" == "win32" ]]; then
+	### Added by the Heroku Toolbelt
+	export PATH="/usr/local/heroku/bin:$PATH"
 
-if [ -f /etc/bash_completion ]; then
-	. /etc/bash_completion
+	if [ -f /etc/bash_completion ]; then
+		. /etc/bash_completion
+	fi
+
+	cd /cygdrive/c/dev
+
+	alias ruby='/cygdrive/c/Ruby193/bin/ruby'
+	alias gem='/cygdrive/c/Ruby193/bin/gem.bat'
+	alias irb='/cygdrive/c/Ruby193/bin/irb.bat'
 fi
-
-cd /cygdrive/c/dev
-
-alias ruby='/cygdrive/c/Ruby193/bin/ruby'
-alias gem='/cygdrive/c/Ruby193/bin/gem.bat'
-alias irb='/cygdrive/c/Ruby193/bin/irb.bat'
