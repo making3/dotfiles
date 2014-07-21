@@ -33,3 +33,8 @@ source $VIMRUNTIME/mswin.vim
 " Forgot what these do...
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
+
+syntax enable
+set background=dark
+colorscheme solarized
+

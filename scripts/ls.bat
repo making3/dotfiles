@@ -1,6 +1,7 @@
-@echo off
+@ECHO off
+
 :: List folders with a forward slash at the end
-for /f %%F in ('dir /B /AD-S') do @echo %%F/
+FOR /f %%F IN ('dir /B /AD-S') DO echo %%F/
 
 :: List files without the slash
-for /f %%F in ('dir /B /A-H-S-D') do @echo %%F
+dir /B /A-H-S-D 2>NUL

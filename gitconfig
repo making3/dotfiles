@@ -5,5 +5,10 @@
     ui = true
 [merge]
     ff = false
+	tool = meld
+	ff = false
 [core]
     editor = vim
+	excludesfile = ~/.gitignore
+[http]
+	sslVerify = false

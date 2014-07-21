@@ -1,13 +1,13 @@
 # Compiled sources #
 ####################
-*.exe
-*.dll
 
 # Folders #
 ###########
 bin/
 obj/
 packages/
+TestResults/
+.svn/
 
 # User Files #
 ##############

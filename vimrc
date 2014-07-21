@@ -10,6 +10,7 @@
 " Sections:
 "       General
 "       UI
+"       Plugins
 "       Colors and fonts
 "       Text, tabs and indents
 "       Moving around, tabs, windows and buffers
@@ -21,8 +22,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable pathogen
-execute pathogen#infect()
 
 filetype plugin on
 
@@ -35,6 +34,31 @@ nmap <leader>q :q<cr>
 
 " Turn off highlighting
 nmap <F3> :noh<CR>
+
+" MApping + and - to increment/decrement
+nnoremap <kPlus> <C-a>
+nnoremap <kMinus> <C-x>
+
+" Better VIM autocompletion
+set wildmenu
+set laststatus=2
+
+" Delete trailing white space on save, useful for Python and CoffeeScript ;)
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+autocmd BufWrite *.py :call DeleteTrailingWS()
+autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Enable pathogen
+execute pathogen#infect()
 
 " Tabular mappings
 if (exists(":Tabularize"))
@@ -75,6 +99,11 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" A buffer becomes hidden when it is abandoned
+set hid
+
+" Show matching brackets when text indicator is over them
+set showmatch
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and fonts
@@ -82,6 +111,7 @@ set tm=500
 set encoding=utf8
 set ffs=unix,dos,mac
 
+" Uses solarize for color
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text, tab and indents
@@ -106,7 +136,6 @@ set si
 " Line numbers
 set nu
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Moving around, tabs, windows and buffers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -121,15 +150,12 @@ au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.template set filetype=html
 au BufNewFile,BufRead *.mustache set filetype=html
 
-" Disable arrow keys.
-" map <up> <nop>
-" map <down> <nop>
-" map <left> <nop>
-" map <right> <nop>
-" imap <up> <nop>
-" imap <down> <nop>
-" imap <left> <nop>
-" imap <right> <nop>
+" Easy buffer commands
+map <leader>n :bn<cr>
+map <leader>p :bp<cr>
+map <leader>d :bd<cr>
+map <leader>bb :ls<cr>:buffer<space>
+map <leader>a :badd
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fold settings (equivalant to collapsing)

@@ -11,6 +11,7 @@ Plugins Used:<br />
 [NERDCommenter](https://github.com/scrooloose/nerdcommenter)<br />
 [Tabular](https://github.com/godlygeek/tabular)<br />
 [Solarized](https://github.com/altercation/vim-colors-solarized)
+[vim-airline](https://github.com/bling/vim-airline)
 
 Other Details:<br />
 [Vim Snippet Files](https://github.com/honza/vim-snippets)
@@ -26,9 +27,9 @@ Installing into ~/.dotfiles is optional. If this is changed, then the variables 
 Windows
 
     git clone https://github.com/making3/dotfiles.git %HOME%/.dotfiles
-    cd %HOME%/.dotfiles
-    win_makesymlinks.bat
-    set_cmd_autorun.cmd -> RUN ONLY ONCE
+    cd %HOME%\.dotfiles
+    win_makelinks.bat -> Run every time vimrc is updated.
+    set_cmd_autorun.cmd  -> RUN ONLY ONCE
 
 Linux
     
