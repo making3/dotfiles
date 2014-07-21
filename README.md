@@ -10,7 +10,7 @@ Plugins Used:<br />
 [SnipMate](https://github.com/garbas/vim-snipmate)<br />
 [NERDCommenter](https://github.com/scrooloose/nerdcommenter)<br />
 [Tabular](https://github.com/godlygeek/tabular)<br />
-[Solarized](https://github.com/altercation/vim-colors-solarized)
+[Solarized](https://github.com/altercation/vim-colors-solarized)<br />
 [vim-airline](https://github.com/bling/vim-airline)
 
 Other Details:<br />
