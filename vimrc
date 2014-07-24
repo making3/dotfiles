@@ -8,6 +8,7 @@
 "       http://amix.dk/vim/vimrc.html
 "
 " Sections:
+"		OS Specific
 "       General
 "       UI
 "       Plugins
@@ -15,9 +16,24 @@
 "       Text, tabs and indents
 "       Moving around, tabs, windows and buffers
 "       Fold settings
-"		OS Specific
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" OS Specific
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set swapfile
+  
+if has("win32") || has("win16")
+  set dir=$HOME\.vim\.swap\
+  set backupdir=$HOME\.vim\.backups\
+  " Change default vimfiles location
+  set runtimepath+=~/.vim
+else
+  set dir=~/.vim/.swap
+  set backupdir=~/.vim/.backups
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
@@ -180,18 +196,3 @@ let sh_fold_enabled=1
 map <leader>f :%foldc<cr>
 map <leader>o zR<cr>
 map <leader>r :setlocal foldlevel=1<cr>
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" OS Specific
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set swapfile
-  
-if has("win32") || has("win16")
-  set dir=$HOME\.vim\.swap\
-  set backupdir=$HOME\.vim\.backups\
-else
-  set dir=~/.vim/.swap
-  set backupdir=~/.vim/.backups
-endif

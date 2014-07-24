@@ -21,12 +21,6 @@ nmap <C-A> <C-W>
 nmap <C-A>% <C-W>v
 nmap <C-A>" <C-W>s
 
-" Dark color in gVim
-colors slate
-
-" Change to C:\dev by default
-" :cd C:\dev
-
 " Allows "windows functionality" to work (such as Control+C and Control+P)
 source $VIMRUNTIME/mswin.vim
 
@@ -38,3 +32,8 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+" Change to dev directory by default
+if hostname() == 'IWTDEV13'
+    :cd C:\dev
+elseif hostname() == 'HOME'
+endif
