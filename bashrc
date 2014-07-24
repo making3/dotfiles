@@ -228,7 +228,7 @@ function m() {
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-if [[ "$OSTYPE" == "win32" ]]; then
+if [[ "$HOSTNAME" == "IWTDEV13" ]]; then
 	### Added by the Heroku Toolbelt
 	export PATH="/usr/local/heroku/bin:$PATH"
 
