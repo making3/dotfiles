@@ -18,7 +18,6 @@
 "       Fold settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " OS Specific
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -28,8 +27,12 @@ set swapfile
 if has("win32") || has("win16")
   set dir=$HOME\.vim\.swap\
   set backupdir=$HOME\.vim\.backups\
+
   " Change default vimfiles location
   set runtimepath+=~/.vim
+
+  " Change default font (whatever solarized uses sucks)
+  set guifont=Consolas:h10:cANSI
 else
   set dir=~/.vim/.swap
   set backupdir=~/.vim/.backups
