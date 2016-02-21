@@ -8,3 +8,4 @@ git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
 git clone https://github.com/garbas/vim-snipmate.git
 git clone https://github.com/scrooloose/nerdcommenter.git
 git clone git://github.com/godlygeek/tabular.git
+git clone git://github.com/altercation/vim-colors-solarized.git
