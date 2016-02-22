@@ -26,15 +26,16 @@ Installing into ~/.dotfiles is optional. If this is changed, then the variables 
 
 Windows
 
-    git clone https://github.com/making3/dotfiles.git %HOME%/.dotfiles
-    cd %HOME%\.dotfiles
-    win_makelinks.bat -> Run every time vimrc is updated.
+    git clone https://github.com/making3/dotfiles.git %HOME%.dotfiles
+    cd %HOME%\.dotfiles\windows
+    win_makelinks.bat    -> Run every time vimrc is updated.
     set_cmd_autorun.cmd  -> RUN ONLY ONCE
+	install_pathogen.bat -> Run whenever - Does the full Pathogen/Plugin install below.
 
 Linux
     
     git clone https://github.com/making3/dotfiles.git ~/.dotfiles
-    cd ~/.dotfiles
+    cd ~/.linux/dotfiles
     chmod +x linux_makesymlinks.sh
     ./linux_makesymlinks.sh
     
@@ -73,3 +74,4 @@ Solarized theme is enabled in the .vimrc configuration file and the tmux configu
 TODO
 ====
     Possible add a script to auto install all plugins
+	Add Atom scripts
