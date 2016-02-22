@@ -155,6 +155,9 @@ alias rt='bundle exec rspec $1' # Run rails tests
 alias rs='rails s' # Rails server
 alias beg='bundle exec guard'
 
+# c# Project
+alias ver='cat $1 | egrep AssemblyFileVersion'
+
 
 ##################################################################################
 # Custom functions
@@ -242,3 +245,5 @@ if [[ "$HOSTNAME" == "IWTDEV13" ]]; then
 	alias gem='/cygdrive/c/Ruby193/bin/gem.bat'
 	alias irb='/cygdrive/c/Ruby193/bin/irb.bat'
 fi
+
+export NODE_ENV=production
