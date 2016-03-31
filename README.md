@@ -25,10 +25,11 @@ Installation
 Installing into ~/.dotfiles is optional. If this is changed, then the variables in makesymlinks.sh must be changed (only at the top).
 
 Windows
+Make sure your path is `C:\Users\name` instead of `C:\Users\name\`
 
     git clone https://github.com/making3/dotfiles.git %HOME%.dotfiles
     cd %HOME%\.dotfiles\windows
-    win_makelinks.bat    -> Run every time vimrc is updated.
+    makelinks.bat    -> Run every time vimrc is updated.
     set_cmd_autorun.cmd  -> RUN ONLY ONCE
 	install_pathogen.bat -> Run whenever - Does the full Pathogen/Plugin install below.
 

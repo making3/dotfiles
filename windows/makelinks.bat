@@ -13,7 +13,7 @@ for /f "tokens=1-4 delims=.: " %%i in ("%time%") do (
 ECHO Creating vim backup and swap folders
 
 :: Creates main backup folder.
-set mainbackup="%HOME%\.dotfiles_old"
+set mainbackup=%HOME%\.dotfiles_old
 if not exist %mainbackup% (
     mkdir %mainbackup%
     :: Hides the backup directory
@@ -27,7 +27,6 @@ if not exist %backup% (
     mkdir %backup%
 )
 
-ECHO.
 ECHO Backing up existing dot files.
 
 :: Makesure HOME has the backslash at the end

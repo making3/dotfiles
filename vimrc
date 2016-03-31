@@ -38,10 +38,7 @@ else
   set backupdir=~/.vim/.backups
 endif
 
-if hostname() == 'IWTDEV13'
-  :let g:notes_directories = ['~/notes']
-elseif hostname() == 'HOME'
-endif
+:let g:notes_directories = ['~/notes','~/Dropbox/notes']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
