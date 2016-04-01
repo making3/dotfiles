@@ -1,0 +1,17 @@
+[user]
+    name = Matthew King
+[color]
+    ui = true
+[merge]
+    ff = false
+    tool = meld
+    ff = false
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+[http]
+    sslVerify = false
+[merge]
+    tool = tortoise
+[mergetool "tortoise"]
+    cmd = "TortoiseMerge.exe" -base:"$BASE" -theirs:"$REMOTE" -mine:"$LOCAL" -merged:"$MERGED"

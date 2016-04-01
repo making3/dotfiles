@@ -42,7 +42,7 @@ ECHO Moving new dot files
 :: Overwrites existing files.
 TYPE "%HOME%\.dotfiles\vimrc" | MORE /p > "%HOME%\_vimrc"
 TYPE "%HOME%\.dotfiles\gvimrc" | MORE /p > "%HOME%\_gvimrc"
-TYPE "%HOME%\.dotfiles\gitconfig" | MORE /p > "%HOME%\.gitconfig"
+TYPE "%HOME%\.dotfiles\windows\gitconfig" | MORE /p > "%HOME%\.gitconfig"
 TYPE "%HOME%\.dotfiles\gitignore" | MORE /p > "%HOME%\.gitignore"
 
 ECHO.

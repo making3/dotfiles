@@ -38,7 +38,7 @@ else
   set backupdir=~/.vim/.backups
 endif
 
-:let g:notes_directories = ['~/notes','~/Dropbox/notes']
+:let g:notes_directories = ['~/Dropbox/notes', '~/notes']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
@@ -52,6 +52,7 @@ let mapleader = ","
 " Fast saving
 nmap <leader>w :w<cr>
 nmap <leader>q :q<cr>
+nmap <leader>t :NERDTree<cr>
 
 " Turn off highlighting
 nmap <F3> :noh<CR>

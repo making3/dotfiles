@@ -24,8 +24,7 @@ Installation
 ============
 Installing into ~/.dotfiles is optional. If this is changed, then the variables in makesymlinks.sh must be changed (only at the top).
 
-Windows
-Make sure your path is `C:\Users\name` instead of `C:\Users\name\`
+Windows (your path should be `C:\Users\name` instead of `C:\Users\name\`)
 
     git clone https://github.com/making3/dotfiles.git %HOME%.dotfiles
     cd %HOME%\.dotfiles\windows
