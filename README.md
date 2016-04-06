@@ -35,9 +35,9 @@ Windows (your path should be `C:\Users\name` instead of `C:\Users\name\`)
 Linux
     
     git clone https://github.com/making3/dotfiles.git ~/.dotfiles
-    cd ~/.linux/dotfiles
-    chmod +x linux_makesymlinks.sh
-    ./linux_makesymlinks.sh
+    cd ~/.dotfiles/linux
+    chmod +x makelinks.sh
+    ./makelinks.sh
     
 Pathogen Installation
 =====================
