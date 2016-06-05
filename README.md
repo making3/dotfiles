@@ -41,11 +41,11 @@ Linux
     
 Pathogen Installation
 =====================
-To get pathogen, copy and paste all three lines: 
+To install pathogen:
 
-    mkdir -p ~/.vim/autoload ~/.vim/bundle; \
-    curl -Sso ~/.vim/autoload/pathogen.vim \
-        https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+    mkdir -p ~/.vim/autoload ~/.vim/bundle
+    cd ~/.vim/autoload
+    wget https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 Plugin Installation
 ===================
@@ -55,6 +55,9 @@ Plugin Installation
     git clone https://github.com/garbas/vim-snipmate.git
     git clone https://github.com/scrooloose/nerdcommenter.git
     git clone git://github.com/godlygeek/tabular.git
+    git clone https://github.com/xolox/vim-notes.git
+    git clone https://github.com/xolox/vim-misc.git
+
 
 Solarized Theme Install
 =======================
