@@ -9,6 +9,6 @@
 	ff = false
 [core]
     editor = vim
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.dotfiles/gitignore
 [http]
 	sslVerify = false

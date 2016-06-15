@@ -74,23 +74,19 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
-set clipboard=unnamedplus
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Tabular mappings
+nmap <leader>a= :Tabularize /=<cr>
+vmap <leader>a= :Tabularize /=<cr>
+nmap <leader>a: :Tabularize /:\zs<cr>
+vmap <leader>a: :Tabularize /:\zs<cr>
+
 " Enable pathogen
 execute pathogen#infect()
-
-" Tabular mappings
-if (exists(":Tabularize"))
-  nmap <leader>a= :Tab /=<cr>
-  vmap <leader>a= :Tab /=<cr>
-  nmap <leader>a: :Tab /:\zs<cr>
-  vmap <leader>a: :Tab /:\zs<cr>
-endif
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic & ESLint Settings
@@ -195,7 +191,6 @@ map <leader>n :bn<cr>
 map <leader>p :bp<cr>
 map <leader>d :bd<cr>
 map <leader>bb :ls<cr>:buffer<space>
-map <leader>a :badd
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fold settings (equivalant to collapsing)
