@@ -246,4 +246,7 @@ if [[ "$HOSTNAME" == "IWTDEV13" ]]; then
 	alias irb='/cygdrive/c/Ruby193/bin/irb.bat'
 fi
 
-export NODE_ENV=production
+export NODE_ENV=development
+
+export NVM_DIR="/home/matt/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -74,6 +74,7 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
+set clipboard=unnamedplus
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
@@ -89,6 +90,23 @@ if (exists(":Tabularize"))
   nmap <leader>a: :Tab /:\zs<cr>
   vmap <leader>a: :Tab /:\zs<cr>
 endif
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic & ESLint Settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" http://stackoverflow.com/a/34169645/724591
+noremap <leader>es<cr> :w<cr> :SyntasticCheck<cr>
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_mode_map = { "mode": "passive" }
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_eq = 0
+let g:syntastic_javascript_checkers = [ 'eslint' ]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " UI

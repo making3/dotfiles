@@ -12,6 +12,7 @@ Plugins Used:<br />
 [Tabular](https://github.com/godlygeek/tabular)<br />
 [Solarized](https://github.com/altercation/vim-colors-solarized)<br />
 [vim-airline](https://github.com/bling/vim-airline)
+[Syntastic](https://github.com/scrooloose/syntastic)
 
 Other Details:<br />
 [Vim Snippet Files](https://github.com/honza/vim-snippets)
@@ -57,6 +58,8 @@ Plugin Installation
     git clone git://github.com/godlygeek/tabular.git
     git clone https://github.com/xolox/vim-notes.git
     git clone https://github.com/xolox/vim-misc.git
+	git clone https://github.com/scrooloose/syntastic.git
+    npm install eslint -g (for syntastic)
 
 
 Solarized Theme Install
