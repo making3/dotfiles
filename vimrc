@@ -73,7 +73,10 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
-
+autocmd BufWrite *.js :call DeleteTrailingWS()
+autocmd BufWrite *.template :call DeleteTrailingWS()
+autocmd BufWrite *.html :call DeleteTrailingWS()
+autocmd BufWrite *.ejs :call DeleteTrailingWS()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
