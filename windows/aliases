@@ -1,0 +1,8 @@
+clear=cls
+lf="%HOME%\.dotfiles\windows\scripts\lf.bat"
+ls="%HOME%\.dotfiles\windows\scripts\ls.bat"
+la="%HOME%\.dotfiles\windows\scripts\la.bat"
+ps=tasklist $*
+kill=taskkill /IM $*
+pull=git subtree pull --prefix sub/$1 $1 $2 $3
+nst=netstat -anp TCP | FIND "$1"

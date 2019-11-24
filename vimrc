@@ -38,8 +38,6 @@ else
   set backupdir=~/.vim/.backups
 endif
 
-:let g:notes_directories = ['~/Dropbox/notes', '~/notes']
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""

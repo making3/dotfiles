@@ -76,10 +76,7 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
-    # alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
@@ -89,15 +86,6 @@ fi
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -129,124 +117,8 @@ YELLOW='\e[1;33m'
 WHITE='\e[1;37m'
 NC='\e[0m'              # No Color
 
-
-#echo -ne "${LIGHTGREEN}" "Hello, $USER. today is, "; date
-#echo -ne "${LIGHTPURPLE}Sysinfo:";uptime ;echo ""
-
-##################################################################################
-# Custom aliases
-##################################################################################
-# General
-alias ll='ls -alF'
-alias la='ls -a'
-alias l='ls -CF'
-alias ls='ls -lF --color=auto'
-alias grep='grep --color=auto -n'
-alias diskspace='du -S | sort -n -r |more'
-
-# Compoundjs/nodejs specific aliases
-alias c='compound'
-alias cs='compound s'
-alias cr='compound r'
-alias cc='compound c'
-
-# Ruby/Rails specific
-alias rt='bundle exec rspec $1' # Run rails tests
-alias rs='rails s' # Rails server
-alias beg='bundle exec guard'
-
-# c# Project
-alias ver='cat $1 | egrep AssemblyFileVersion'
-
-
-##################################################################################
-# Custom functions
-##################################################################################
-
-###
-# Resets the database based on the seed and optionally runs the compound server
-###
-function crs() {
-    compound db migrate;
-    compound seed;
-
-    if [ "$1" = s ]; then
-        compound s;
-    fi
-}
-
-###
-# Sets up genesis development environment (terminal with tmux and a new tab)
-###
-function genesis() {
-    cd ~/dev/genesis-myghr/;
-    tup;
-    tmux;
-}
-
-###
-# Opens up a new tab
-###
-function tup() {
-#!/bin/sh
-
-    WID=$(xprop -root | grep "_NET_ACTIVE_WINDOW(WINDOW)"| awk '{print $5}')
-    xdotool windowfocus $WID
-    xdotool key ctrl+shift+t
-    xdotool key alt+1
-    xdotool key super+Up
-    wmctrl -i -a $WID
-}
-
-###
-# Exports node environments
-###
-function setenv() {
-    if [ "$1" = dev ]; then
-        export NODE_ENV=development;
-    elif [ "$1" = demo ]; then
-        export NODE_ENV=demo;
-    elif [ "$1" = prod ]; then
-        export NODE_ENV=production;
-    elif [ "$1" = load ]; then
-        export NODE_ENV=load;
-    fi
-    echo Environment set to $NODE_ENV;
-}
-
-###
-# Mocha test with optional grep argument
-###
-function m() {
-    if [[ -n "$1" ]]; then
-        if [[ -n "$2" ]]; then
-            mocha test/init.js $1 -g "$2";
-        else
-            mocha test/init.js $1;
-        fi
-    else
-        echo Please specify the test you want to run, and optionally a grep argument.;
-    fi
-}
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-if [[ "$HOSTNAME" == "IWTDEV13" ]]; then
-	### Added by the Heroku Toolbelt
-	export PATH="/usr/local/heroku/bin:$PATH"
-
-	if [ -f /etc/bash_completion ]; then
-		. /etc/bash_completion
-	fi
-
-	cd /cygdrive/c/dev
-
-	alias ruby='/cygdrive/c/Ruby193/bin/ruby'
-	alias gem='/cygdrive/c/Ruby193/bin/gem.bat'
-	alias irb='/cygdrive/c/Ruby193/bin/irb.bat'
-fi
-
 export NODE_ENV=development
-
 export NVM_DIR="/home/matt/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+source ~/.dotfiles/bash/bash_prepare

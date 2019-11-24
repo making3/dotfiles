@@ -5,10 +5,47 @@
     ui = true
 [merge]
     ff = false
-	tool = meld
-	ff = false
+   renamelimit = 8064
 [core]
     editor = vim
-	excludesfile = ~/.dotfiles/gitignore
-[http]
-	sslVerify = false
+    # Veeva Specific
+    hooksPath = .githooks
+[pull]
+    rebase = true
+[alias]
+    hist = log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(red)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --graph --date=short
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    cob = checkout -b
+
+    # Custom Veeva-branch creation.
+    newb = "!f() { name=r$1/matthew.king/$2; git checkout -b $name; }; f"
+    # get the local branch name
+    branch-name = "!git rev-parse --abbrev-ref HEAD"
+
+    # get remote branch name
+    branch-remote = "!git rev-parse --abbrev-ref --symbolic-full-name @{u}"
+
+    # Temporary working
+    save = !git add -A && git commit -m 'SAVEPOINT'
+    wip = commit -am "WIP"
+    undo = reset HEAD~1 --mixed
+
+    # Reset hard but you can use reflog to retrive the commit
+    wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+
+    squash = "!f() { git reset --soft HEAD~$1; }; f"
+
+    # Cleaning
+    up = pull --rebase --prune
+
+    # Cleans all merged branches
+    btest = "!f() { git checkout ${1-develop} && git branch --merged ${1-develop} | grep -v " ${1-develop}$" | grep -v "release"; }; f"
+    bclean = "!f() { git checkout ${1-develop} && git branch --merged ${1-develop} | grep -v " ${1-develop}$" | grep -v "release" | xargs git branch -d; }; f"
+    bdone = "!f() { git checkout ${1-develop} && git up && git bclean ${1-develop}; }; f"
+    alias = config --get-regexp alias
+
+    # Checks before pushing
+    pending = "!f() { git log $(git branch-remote)..$(git branch-name) && git diff --stat $(git branch-remote); }; f"

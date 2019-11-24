@@ -1,0 +1,4 @@
+# Source custom bash scripts here, for example:
+#   source ~/.gitbashrc
+#   source ~/.aliasesbashrc
+source ~/.dotfiles/bash/bash_aliases
