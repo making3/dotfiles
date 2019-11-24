@@ -55,4 +55,22 @@ echo "Making swap & backup directories"
 mkdir -p ~/.vim/.swap
 mkdir -p ~/.vim/.backups
 
-echo "Sym link script complete."
+echo "Installing VIM Plugins (Pathogen)"
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+cd ~/.vim/autoload
+wget https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+cd ~/.vim/bundle
+git clone https://github.com/tomtom/tlib_vim.git
+git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
+git clone https://github.com/garbas/vim-snipmate.git
+git clone https://github.com/scrooloose/nerdcommenter.git
+git clone git://github.com/godlygeek/tabular.git
+git clone https://github.com/xolox/vim-misc.git
+git clone https://github.com/scrooloose/syntastic.git
+echo "VIM Plugin installation complete."
+
+# Reset back to the default path
+source ~/.bashrc
+cd ~
+echo "Sym link script complete. Sourced new bashrc."
