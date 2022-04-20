@@ -86,25 +86,6 @@ vmap <leader>a= :Tabularize /=<cr>
 nmap <leader>a: :Tabularize /:\zs<cr>
 vmap <leader>a: :Tabularize /:\zs<cr>
 
-" Enable pathogen
-execute pathogen#infect()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic & ESLint Settings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" http://stackoverflow.com/a/34169645/724591
-noremap <leader>es<cr> :w<cr> :SyntasticCheck<cr>
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_mode_map = { "mode": "passive" }
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_eq = 0
-let g:syntastic_javascript_checkers = [ 'eslint' ]
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " UI
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
