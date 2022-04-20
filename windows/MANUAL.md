@@ -5,6 +5,7 @@
 - [Cmder](https://cmder.net/)
 - [Git](https://git-scm.com/download/win)
 - [Vim](https://www.vim.org/)
+- [NodeJS](https://nodejs.org/en/)
 
 ## Installation Instructions
 
