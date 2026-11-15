@@ -140,10 +140,10 @@ set expandtab
 " Be smart when using tabs
 set smarttab
 
-" Set tab widths to 4 
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+" Set tab widths to 2 
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 
 " Auto indent
 set ai
