@@ -8,8 +8,6 @@
    renamelimit = 8064
 [core]
     editor = vim
-    # Veeva Specific
-    hooksPath = .githooks
 [pull]
     rebase = true
 [alias]
@@ -20,8 +18,6 @@
     br = branch
     cob = checkout -b
 
-    # Custom Veeva-branch creation.
-    newb = "!f() { name=r$1/matthew.king/$2; git checkout -b $name; }; f"
     # get the local branch name
     branch-name = "!git rev-parse --abbrev-ref HEAD"
 

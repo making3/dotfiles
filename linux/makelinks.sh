@@ -1,15 +1,11 @@
 #!/bin/bash
-############################
-# .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-############################
+# Symlinks the dotfiles in ~/.dotfiles into the home directory.
 
 ########## Variables
 
 dir=~/.dotfiles                             # dotfiles directory
 olddir=~/.dotfiles_old                      # old dotfiles backup directory
-files="bashrc vimrc tmux.conf gitconfig"    # list of files/folders to symlink in homedir
-vim=~/.vim/                                 # Vim folder
+files="bashrc vimrc gitconfig"             # list of files/folders to symlink in homedir
 
 ##########
 
@@ -31,44 +27,10 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
-# Create $vim/snippets & $vim/syntax
-echo "Creating director $vim/snippets and $vim/syntax if they do not already exist."
-mkdir -p $vim/snippets
-mkdir -p $vim/syntax
-
-# Make symlinks for snippets to point to dotfiles/snippets
-echo "Moving any existing vim snippets from $vim/snippets to $olddir/snippets"
-rm -rf $olddir/snippets
-mv $vim/snippets $olddir/snippets
-echo "Creating symlink to $dir/snippets in $vim/snippets"
-ln -s $dir/snippets $vim/snippets
-
-# Make symlinks for syntax to point to dotfiles/syntax
-echo "Moving any existing vim snytax files from $vim/syntax to $olddir/syntax"
-rm -rf $olddir/syntax
-mv $vim/syntax $olddir/syntax
-echo "Creating symlink to $dir/syntax in $vim/snippets"
-ln -s $dir/syntax $vim/syntax
-
 # Make backup/swap file directories
 echo "Making swap & backup directories"
 mkdir -p ~/.vim/.swap
 mkdir -p ~/.vim/.backups
-
-echo "Installing VIM Plugins (Pathogen)"
-mkdir -p ~/.vim/autoload ~/.vim/bundle
-cd ~/.vim/autoload
-wget https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-
-cd ~/.vim/bundle
-git clone https://github.com/tomtom/tlib_vim.git
-git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
-git clone https://github.com/garbas/vim-snipmate.git
-git clone https://github.com/scrooloose/nerdcommenter.git
-git clone git://github.com/godlygeek/tabular.git
-git clone https://github.com/xolox/vim-misc.git
-git clone https://github.com/scrooloose/syntastic.git
-echo "VIM Plugin installation complete."
 
 # Reset back to the default path
 source ~/.bashrc

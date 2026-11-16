@@ -1,48 +1,17 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-"  By: Matt King
-" 
-" Thanks to:
-"       Amir Salihefendic (his vimrc)
-"  
-" References: 
-"       http://amix.dk/vim/vimrc.html
-"
-" Sections:
-"		OS Specific
-"       General
-"       UI
-"       Plugins
-"       Colors and fonts
-"       Text, tabs and indents
-"       Moving around, tabs, windows and buffers
-"       Fold settings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" OS Specific
+" Swap and backups
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set swapfile
-  
-if has("win32") || has("win16")
-  set dir=$HOME\.vim\.swap\
-  set backupdir=$HOME\.vim\.backups\
-
-  " Change default vimfiles location
-  set runtimepath+=~/.vim
-
-  " Change default font (whatever solarized uses sucks)
-  set guifont=Consolas:h10:cANSI
-else
-  set dir=~/.vim/.swap
-  set backupdir=~/.vim/.backups
-endif
+set dir=~/.vim/.swap
+set backupdir=~/.vim/.backups
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 filetype plugin on
+syntax on
 
 " Used as a leader key for extra key combos
 let mapleader = ","
@@ -50,7 +19,6 @@ let mapleader = ","
 " Fast saving
 nmap <leader>w :w<cr>
 nmap <leader>q :q<cr>
-nmap <leader>t :NERDTree<cr>
 
 " Turn off highlighting
 nmap <F3> :noh<CR>
@@ -59,32 +27,11 @@ nmap <F3> :noh<CR>
 nnoremap <kPlus> <C-a>
 nnoremap <kMinus> <C-x>
 
-" Better VIM autocompletion
+" Better command-line completion
 set wildmenu
+
+" Always show the status line
 set laststatus=2
-
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
-autocmd BufWrite *.js :call DeleteTrailingWS()
-autocmd BufWrite *.template :call DeleteTrailingWS()
-autocmd BufWrite *.html :call DeleteTrailingWS()
-autocmd BufWrite *.ejs :call DeleteTrailingWS()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Tabular mappings
-nmap <leader>a= :Tabularize /=<cr>
-vmap <leader>a= :Tabularize /=<cr>
-nmap <leader>a: :Tabularize /:\zs<cr>
-vmap <leader>a: :Tabularize /:\zs<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " UI
@@ -124,12 +71,10 @@ set hid
 set showmatch
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colors and fonts
+" Encoding and file formats
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=utf8
 set ffs=unix,dos,mac
-
-" Uses solarize for color
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text, tab and indents
@@ -162,11 +107,6 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
-
-" Enable syntax highlighting
-au BufNewFile,BufRead *.ejs set filetype=html
-au BufNewFile,BufRead *.template set filetype=html
-au BufNewFile,BufRead *.mustache set filetype=html
 
 " Easy buffer commands
 map <leader>n :bn<cr>
