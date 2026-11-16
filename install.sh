@@ -7,7 +7,7 @@ set -euo pipefail
 readonly dotfiles_dir="$HOME/.dotfiles"
 backup_dir="$HOME/.dotfiles_old/$(date +%Y%m%d-%H%M%S)"
 readonly backup_dir
-readonly files=(bashrc vimrc gitconfig)
+readonly files=(bashrc zshrc vimrc gitconfig)
 
 link_file() {
   local src="$dotfiles_dir/$1"
@@ -51,7 +51,7 @@ main() {
   git -C "$dotfiles_dir" config core.hooksPath githooks
   echo "hooks:     git hooks set to $dotfiles_dir/githooks"
 
-  echo "Done. Open a new shell to load the new bashrc."
+  echo "Done. Open a new shell to load the new config."
 }
 
 main "$@"

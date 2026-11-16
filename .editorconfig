@@ -12,3 +12,7 @@ indent_style = space
 indent_size = 2
 shell_variant = bash
 switch_case_indent = true
+
+# Shared shell config is sourced by both bash and zsh, so keep it POSIX.
+[shell/*.sh]
+shell_variant = posix

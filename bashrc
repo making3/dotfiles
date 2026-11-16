@@ -88,4 +88,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source ~/.dotfiles/bash/bash_prepare
+# Shared bash/zsh config.
+for f in ~/.dotfiles/shell/*.sh; do
+  . "$f"
+done
+unset f

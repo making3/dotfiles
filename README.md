@@ -1,21 +1,20 @@
 # About
-This repo includes my custom vimrc, bash, and git config files. Old configs I no longer use live in `_archive/`. Follow the instructions below.
+This repo includes my custom vim, bash, zsh, and git config files. Old configs I no longer use live in `_archive/`. Follow the instructions below.
 
 ## Where this repo is used
 
 | Environment | Shell | Notes |
 |---|---|---|
 | Windows, via WSL (Ubuntu) | bash | Everything runs inside WSL; see "Windows host" below. |
-| macOS | zsh | Only `vimrc` and `gitconfig` apply. zsh doesn't read `bashrc`. |
+| macOS | zsh | Uses `zshrc` instead of `bashrc`; both load the shared config in `shell/`. |
 | Ubuntu Server (latest) | bash | Headless, so no desktop or GUI setup. |
 
 ## Installation
 
-### Linux / WSL (Copy the full command)
+### WSL, macOS, and Ubuntu Server (copy the full command)
     
     git clone https://github.com/making3/dotfiles.git ~/.dotfiles &&
-    chmod +x ~/.dotfiles/linux/makelinks.sh &&
-    ~/.dotfiles/linux/makelinks.sh
+    ~/.dotfiles/install.sh
 
 ### Windows host (for WSL)
 
