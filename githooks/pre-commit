@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Lints staged shell scripts with shellcheck and checks their formatting with
+# shfmt (settings come from .editorconfig). Bypass with `git commit --no-verify`.
+set -euo pipefail
+
+missing=()
+for tool in shellcheck shfmt; do
+  if ! command -v "$tool" >/dev/null 2>&1; then
+    missing+=("$tool")
+  fi
+done
+if ((${#missing[@]} > 0)); then
+  echo "pre-commit: missing ${missing[*]}." >&2
+  echo "Install with 'sudo apt install ${missing[*]}' or 'brew install ${missing[*]}'," >&2
+  echo "or skip this check with 'git commit --no-verify'." >&2
+  exit 1
+fi
+
+# Staged shell scripts: *.sh files plus the hooks themselves.
+scripts=()
+while IFS= read -r file; do
+  case "$file" in
+    *.sh | githooks/*) scripts+=("$file") ;;
+  esac
+done < <(git diff --cached --name-only --diff-filter=ACMR)
+
+if ((${#scripts[@]} == 0)); then
+  exit 0
+fi
+
+status=0
+shellcheck "${scripts[@]}" || status=1
+if ! shfmt -d "${scripts[@]}"; then
+  echo "pre-commit: run 'shfmt -w ${scripts[*]}' to fix formatting." >&2
+  status=1
+fi
+exit "$status"

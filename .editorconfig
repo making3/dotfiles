@@ -1,0 +1,14 @@
+root = true
+
+# shfmt reads these settings.
+[*.sh]
+indent_style = space
+indent_size = 2
+shell_variant = bash
+switch_case_indent = true
+
+[githooks/*]
+indent_style = space
+indent_size = 2
+shell_variant = bash
+switch_case_indent = true
